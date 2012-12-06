@@ -1,0 +1,13 @@
+--- libcdio-paranoia-10.2+0.90/include/cdio/paranoia/Makefile.am.orig	2011-11-05 21:11:17.000000000 +0100
++++ libcdio-paranoia-10.2+0.90/include/cdio/paranoia/Makefile.am	2012-12-06 18:56:26.095291751 +0100
+@@ -3,8 +3,8 @@
+ ########################################################
+ #
+ 
+-libcdioincludedir=$(includedir)/cdio
+-dist_libcdioinclude_HEADERS = cdda.h paranoia.h 
++cdio_paranoia_includedir=$(includedir)/cdio/paranoia
++dist_cdio_paranoia_include_HEADERS = cdda.h paranoia.h 
+ 
+ EXTRA_DIST = version.h.in
+ BUILT_SOURCES = version.h

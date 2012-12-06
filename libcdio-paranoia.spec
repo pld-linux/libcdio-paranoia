@@ -7,12 +7,12 @@ Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 Version:	0.90
 %define	paranoia_ver	10.2
-Release:	1
+Release:	2
 License:	LGPL v2.1 (library), GPL v2 (utility)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{version}.tar.gz
 # Source0-md5:	7175764764c7fa22e1b802b9526c9411
-#Patch0:		%{name}-info.patch
+Patch0:		%{name}-headers.patch
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake >= 1:1.8.3
@@ -74,6 +74,7 @@ Narzędzie używające libcdio-paranoia: cd-paranoia.
 
 %prep
 %setup -q -n %{name}-%{paranoia_ver}+%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -114,8 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libcdio_paranoia.so
 %{_libdir}/libcdio_cdda.la
 %{_libdir}/libcdio_paranoia.la
-%{_includedir}/cdio/cdda.h
-%{_includedir}/cdio/paranoia.h
+%{_includedir}/cdio/paranoia
 %{_pkgconfigdir}/libcdio_cdda.pc
 %{_pkgconfigdir}/libcdio_paranoia.pc
 
