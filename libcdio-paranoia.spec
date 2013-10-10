@@ -9,7 +9,7 @@ Name:		libcdio-paranoia
 %define	libcdio_ver	0.90
 %define	subver		1
 Version:	%{libcdio_ver}_%{subver}
-Release:	1
+Release:	2
 License:	LGPL v2.1 (library), GPL v2 (utility)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
@@ -97,6 +97,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	mansubdir=/ja/man1
 
+ln -s paranoia/cdda.h $RPM_BUILD_ROOT%{_includedir}/cdio/cdda.h
+ln -s paranoia/paranoia.h $RPM_BUILD_ROOT%{_includedir}/cdio/paranoia.h
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -117,6 +120,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libcdio_paranoia.so
 %{_libdir}/libcdio_cdda.la
 %{_libdir}/libcdio_paranoia.la
+%{_includedir}/cdio/cdda.h
+%{_includedir}/cdio/paranoia.h
 %{_includedir}/cdio/paranoia
 %{_pkgconfigdir}/libcdio_cdda.pc
 %{_pkgconfigdir}/libcdio_paranoia.pc
