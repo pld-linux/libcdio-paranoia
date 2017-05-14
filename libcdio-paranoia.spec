@@ -6,14 +6,14 @@ Summary:	CD paranoia CD-DA libraries from libcdio
 Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 %define	paranoia_ver	10.2
-%define	libcdio_ver	0.93
+%define	libcdio_ver	0.94
 %define	subver		1
 Version:	%{libcdio_ver}_%{paranoia_ver}_%{subver}
-Release:	3
+Release:	1
 License:	GPL v3+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
-# Source0-md5:	0255aa50e660db7f2c39658b9c565814
+# Source0-md5:	1e8f35be7fff7e0658063ae019ce3b6e
 Patch0:		%{name}-am.patch
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	autoconf >= 2.67
@@ -112,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS doc/overlapdef.txt
+%doc AUTHORS ChangeLog NEWS README.md THANKS doc/overlapdef.txt
 %attr(755,root,root) %{_libdir}/libcdio_cdda.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcdio_cdda.so.2
 %attr(755,root,root) %{_libdir}/libcdio_paranoia.so.*.*.*
