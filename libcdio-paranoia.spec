@@ -7,16 +7,16 @@ Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 %define	paranoia_ver	10.2
 %define	libcdio_ver	0.94
-%define	subver		1
+%define	subver		2
 Version:	%{libcdio_ver}_%{paranoia_ver}_%{subver}
 Release:	1
 License:	GPL v3+
 Group:		Libraries
-Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
-# Source0-md5:	1e8f35be7fff7e0658063ae019ce3b6e
+Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.gz
+# Source0-md5:	34ac925c9b903bd40b90ff25b81744a6
 Patch0:		%{name}-am.patch
 URL:		http://www.gnu.org/software/libcdio/
-BuildRequires:	autoconf >= 2.67
+BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.8.3
 BuildRequires:	help2man
 BuildRequires:	libcdio-devel >= 0.90
