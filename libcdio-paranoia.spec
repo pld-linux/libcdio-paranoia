@@ -9,7 +9,7 @@ Name:		libcdio-paranoia
 %define	libcdio_ver	0.94
 %define	subver		2
 Version:	%{libcdio_ver}_%{paranoia_ver}_%{subver}
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.gz
