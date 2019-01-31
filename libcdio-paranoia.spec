@@ -12,7 +12,11 @@ Version:	%{libcdio_ver}_%{paranoia_ver}%{?subver:_%{subver}}
 Release:	1
 License:	GPL v3+
 Group:		Libraries
-Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}%{?subver:+%{subver}}.tar.bz2
+%if 0%{?subver:1}
+Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
+%else
+Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}.tar.bz2
+%endif
 # Source0-md5:	d655346728fb369f35cb2df87bd4349b
 Patch0:		%{name}-am.patch
 URL:		http://www.gnu.org/software/libcdio/
