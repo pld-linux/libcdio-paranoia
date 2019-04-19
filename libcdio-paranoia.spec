@@ -6,10 +6,10 @@ Summary:	CD paranoia CD-DA libraries from libcdio
 Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 %define	paranoia_ver	10.2
-%define	libcdio_ver	2.1.0
+%define	libcdio_ver	2.0.0
 %undefine	subver
 Version:	%{libcdio_ver}_%{paranoia_ver}%{?subver:_%{subver}}
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Libraries
 %if 0%{?subver:1}
