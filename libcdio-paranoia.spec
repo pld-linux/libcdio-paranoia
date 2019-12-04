@@ -6,18 +6,18 @@ Summary:	CD paranoia CD-DA libraries from libcdio
 Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 %define	paranoia_ver	10.2
-%define	libcdio_ver	2.0.0
+%define	libcdio_ver	2.0.1
 %undefine	subver
 Version:	%{libcdio_ver}_%{paranoia_ver}%{?subver:_%{subver}}
-Release:	2
+Release:	1
 License:	GPL v3+
 Group:		Libraries
 %if 0%{?subver:1}
-Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
+Source0:	https://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
 %else
-Source0:	http://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}.tar.bz2
+Source0:	https://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}.tar.bz2
+# Source0-md5:	98332ca7b2a4fcabf5dec8a57cc98fe9
 %endif
-# Source0-md5:	d655346728fb369f35cb2df87bd4349b
 Patch0:		%{name}-am.patch
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	autoconf >= 2.69
@@ -116,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README.md THANKS doc/overlapdef.txt
+%doc AUTHORS ChangeLog NEWS.md README.md THANKS doc/overlapdef.txt
 %attr(755,root,root) %{_libdir}/libcdio_cdda.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcdio_cdda.so.2
 %attr(755,root,root) %{_libdir}/libcdio_paranoia.so.*.*.*
