@@ -1,7 +1,8 @@
---- libcdio-paranoia-10.2+0.90+1/configure.ac.orig	2012-12-25 01:07:50.000000000 +0100
-+++ libcdio-paranoia-10.2+0.90+1/configure.ac	2013-04-20 21:47:07.705641001 +0200
-@@ -29,7 +29,7 @@
- AM_INIT_AUTOMAKE
+diff -urNp -x '*.orig' libcdio-paranoia-10.2+2.0.1.org/configure.ac libcdio-paranoia-10.2+2.0.1/configure.ac
+--- libcdio-paranoia-10.2+2.0.1.org/configure.ac	2019-09-16 16:30:01.000000000 +0200
++++ libcdio-paranoia-10.2+2.0.1/configure.ac	2024-05-01 13:43:17.903564202 +0200
+@@ -27,7 +27,7 @@ AC_CONFIG_SRCDIR(src/cd-paranoia.c)
+ AM_INIT_AUTOMAKE([foreign])
  
  AC_CANONICAL_HOST
 -AM_CONFIG_HEADER(config.h)

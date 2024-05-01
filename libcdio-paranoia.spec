@@ -9,7 +9,7 @@ Name:		libcdio-paranoia
 %define	libcdio_ver	2.0.1
 %undefine	subver
 Version:	%{libcdio_ver}_%{paranoia_ver}%{?subver:_%{subver}}
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Libraries
 %if 0%{?subver:1}
