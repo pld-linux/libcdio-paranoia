@@ -1,33 +1,27 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static library
+%bcond_without	static_libs	# static library
 #
 Summary:	CD paranoia CD-DA libraries from libcdio
 Summary(pl.UTF-8):	Biblioteki paranoia CD-DA z libcdio
 Name:		libcdio-paranoia
 %define	paranoia_ver	10.2
-%define	libcdio_ver	2.0.1
-%undefine	subver
-Version:	%{libcdio_ver}_%{paranoia_ver}%{?subver:_%{subver}}
-Release:	2
+%define	libcdio_ver	2.0.2
+Version:	%{libcdio_ver}_%{paranoia_ver}
+Release:	1
 License:	GPL v3+
 Group:		Libraries
-%if 0%{?subver:1}
-Source0:	https://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}+%{subver}.tar.bz2
-%else
 Source0:	https://ftp.gnu.org/gnu/libcdio/%{name}-%{paranoia_ver}+%{libcdio_ver}.tar.bz2
-# Source0-md5:	98332ca7b2a4fcabf5dec8a57cc98fe9
-%endif
-Patch0:		%{name}-am.patch
+# Source0-md5:	02af739e2f0c33cb4fd9480bab690548
 URL:		http://www.gnu.org/software/libcdio/
-BuildRequires:	autoconf >= 2.69
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1:1.8.3
 BuildRequires:	help2man
-BuildRequires:	libcdio-devel >= 0.90
+BuildRequires:	libcdio-devel >= 2.0.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
-Requires:	libcdio >= 0.90
+Requires:	libcdio >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,7 +40,7 @@ Summary:	Header files for libcdio-paranoia libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek libcdio-paranoia
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcdio-devel >= 0.90
+Requires:	libcdio-devel >= 2.0.0
 
 %description devel
 Header files for libcdio-paranoia libraries.
@@ -79,8 +73,7 @@ libcdio-paranoia utility: cd-paranoia.
 Narzędzie używające libcdio-paranoia: cd-paranoia.
 
 %prep
-%setup -q -n %{name}-%{paranoia_ver}+%{libcdio_ver}%{?subver:+%{subver}}
-%patch0 -p1
+%setup -q -n %{name}-%{paranoia_ver}+%{libcdio_ver}
 
 %build
 %{__libtoolize}
